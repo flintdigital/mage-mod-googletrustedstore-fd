@@ -36,6 +36,7 @@ class Mage_GoogleTrustedStore_Model_Config
     const XML_PATH_ENABLED = 'google/trustedstore/enabled';
     const XML_PATH_ACCOUNT_ID = 'google/trustedstore/account_id';
     const XML_PATH_ESTIMATED_SHIP_DATE = 'google/trustedstore/estimated_ship_date';
+    const XML_PATH_ESTIMATED_SHIP_DAYS = 'google/trustedstore/estimated_ship_days';
     const XML_PATH_FTP_HOSTNAME = 'global/googletrustedstore/ftp_host';
     const XML_PATH_FTP_USERNAME = 'google/trustedstore/ftp_username';
     const XML_PATH_FTP_PASSWORD = 'google/trustedstore/ftp_password';
@@ -145,6 +146,17 @@ class Mage_GoogleTrustedStore_Model_Config
     public function getEstimatedShippingPeriod($store = null)
     {
         return Mage::getStoreConfig(self::XML_PATH_ESTIMATED_SHIP_DATE, $store);
+    }
+
+    /**
+     * Returns estimated shipping period in days
+     * @param mixed $store
+     *
+     * @return integer
+     */
+    public function getEstimatedShippingDays($store = null)
+    {
+        return Mage::getStoreConfig(self::XML_PATH_ESTIMATED_SHIP_DAYS, $store);
     }
 
     /**

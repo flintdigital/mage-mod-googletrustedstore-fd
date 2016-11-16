@@ -78,6 +78,17 @@
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
                         </estimated_ship_date>
+                        <estimated_ship_days translate="label comment">
+                            <depends><enabled>1</enabled></depends>
+                            <label>Estimated Shipping Days</label>
+                            <comment><![CDATA[The estimated days that the shipping will take. This is used to calculate estimated delivery date.]]></comment>
+                            <frontend_type>text</frontend_type>
+                            <validate>validate-not-negative-number</validate>
+                            <sort_order>23</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </estimated_ship_days>
                         <ftp_username translate="label comment">
                             <depends><enabled>1</enabled></depends>
                             <label>FTP Username</label>

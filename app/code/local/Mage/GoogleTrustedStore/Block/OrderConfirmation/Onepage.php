@@ -221,6 +221,20 @@ class Mage_GoogleTrustedStore_Block_OrderConfirmation_Onepage extends Mage_Core_
             ->toString('yyyy-MM-dd');
     }
 
+
+    public function getOrderExpectedDeliveryDate()
+    {
+        $order = $this->_getOrder();
+
+        $daysToAdd = Mage::getSingleton('googletrustedstore/config')->getEstimatedShippingPeriod($order->getStoreId())
+            + Mage::getSingleton('googletrustedstore/config')->getEstimatedShippingDays($order->getStoreId());
+
+        return $order->getCreatedAtDate()
+            ->addDay($daysToAdd)
+            ->toString('yyyy-MM-dd');
+    }
+
+
     /**
      * Checks if order contains backordered items
      *
